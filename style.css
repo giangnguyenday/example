@@ -1,0 +1,92 @@
+body {
+    background-color: #DDD;
+}
+
+#object {
+    /* basic styling */
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px; 
+    position: relative;
+    /* animation properties */
+
+    /* MUST HAVE ========== */
+    /* give animation a name for later specification */
+    animation-name: animating-object;
+    /* how long is the animation */
+    animation-duration: 4s;
+    /* how many times the animation happen */
+    animation-iteration-count: infinite;
+    /* ==================== */
+
+    /* OPTIONAL =========== */
+    /* how long is the waiting time before the animation happen */
+    animation-delay: 0;
+    /* what is the direction of the animation */
+    animation-direction: alternate;
+    /* how it will animate based on animation curve */
+    animation-timing-function: linear;  
+
+    /* TRANSITION PROPERTIES ================= */
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+#object:hover {
+    /* pause the animation */
+    animation-play-state: paused;
+
+    /* visual changes on hover */
+    border-radius: 0;
+    transform: rotate(45deg) scale(1.5,1.5);
+    opacity: 0.5;
+}
+
+h1 a:link { 
+    font-family: Arial, Helvetica, sans-serif;
+    color: red; 
+    transition: 1s;
+    transition-timing-function: ease-in;
+}
+h1 a:visited { color: magenta; }
+h1 a:hover { 
+    color: blue; 
+}
+h1 a:active { color: green; } 
+
+@keyframes animating-object {
+    /*
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1;
+    }
+    */
+    0% {
+        background-color: aqua;
+        top: 0;
+        left: 0;
+    }
+    25% {
+        background-color: orange;
+        top: 0;
+        left: 500px;
+    }
+    50% {
+        background-color: forestgreen;
+        top: 500px;
+        left: 500px;
+    }
+    75% {
+        background-color: palevioletred;
+        top: 500px;
+        left: 0;
+    }
+    100% {
+        background-color: aqua;
+        top: 0;
+        left: 0;
+    }
+}
