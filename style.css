@@ -1,92 +1,91 @@
 body {
-    background-color: #DDD;
+    background-color: blueviolet;
 }
 
-#object {
-    /* basic styling */
-    background-color: red;
-    height: 200px;
-    width: 200px;
-    border-radius: 100px; 
-    position: relative;
-    /* animation properties */
-
-    /* MUST HAVE ========== */
-    /* give animation a name for later specification */
-    animation-name: animating-object;
-    /* how long is the animation */
-    animation-duration: 4s;
-    /* how many times the animation happen */
-    animation-iteration-count: infinite;
-    /* ==================== */
-
-    /* OPTIONAL =========== */
-    /* how long is the waiting time before the animation happen */
-    animation-delay: 0;
-    /* what is the direction of the animation */
-    animation-direction: alternate;
-    /* how it will animate based on animation curve */
-    animation-timing-function: linear;  
-
-    /* TRANSITION PROPERTIES ================= */
-    transition: 0.5s;
-    transition-timing-function: ease-in;
+#grid ul.cards {
+    width: 100vw;
+    height: 100vh;
+    /* remove the bullets */
+    list-style: none;
+    /* remove default ul spacing */
+    margin: 0;
+    padding: 0;
+    /* turn into a grid layout */
+    display: grid;
+    /* define the grid system */
+    /* grid-template-columns: auto auto auto; */
+    /* grid-template-columns: 40% 60%; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1vw;
+    /* align grid items along column axis */
+    justify-items: center;
+    /* align grid items along row axis */
+    align-items: center;
 }
 
-#object:hover {
-    /* pause the animation */
-    animation-play-state: paused;
-
-    /* visual changes on hover */
-    border-radius: 0;
-    transform: rotate(45deg) scale(1.5,1.5);
-    opacity: 0.5;
+#grid ul.cards li {
+    background-color: white;
+    width: auto;
+    height: auto;
+    min-width: 20vw;
+    min-height: 20vh;
+    padding: 2vh;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #d0bfff;
 }
 
-h1 a:link { 
+#grid .title {
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: red; 
-    transition: 1s;
-    transition-timing-function: ease-in;
+    margin-bottom: 10px;
 }
-h1 a:visited { color: magenta; }
-h1 a:hover { 
-    color: blue; 
-}
-h1 a:active { color: green; } 
 
-@keyframes animating-object {
-    /*
-    from { 
-        opacity: 0;
-    }
-    to { 
-        opacity: 1;
-    }
-    */
-    0% {
-        background-color: aqua;
-        top: 0;
-        left: 0;
-    }
-    25% {
-        background-color: orange;
-        top: 0;
-        left: 500px;
-    }
-    50% {
-        background-color: forestgreen;
-        top: 500px;
-        left: 500px;
-    }
-    75% {
-        background-color: palevioletred;
-        top: 500px;
-        left: 0;
-    }
-    100% {
-        background-color: aqua;
-        top: 0;
-        left: 0;
-    }
+#grid #card1 {
+    background-color: chartreuse !important;
+    /* indicate the column grid line the item starts */
+    grid-column-start: 2;
+    /* indicate the column grid line the item ends */
+    grid-column-end: 3;
+    /* indicate the row grid line the item starts */
+    grid-row-start: 1;
+    /* indicate the row grid line the item ends */
+    grid-row-end: 2;
+}
+
+#grid #card2 {
+    background-color: crimson !important;
+    /* indicate the column grid line the item starts */
+    grid-column-start: 3;
+    /* indicate the column grid line the item ends */
+    grid-column-end: 4;
+    /* indicate the row grid line the item starts */
+    grid-row-start: 1;
+    /* indicate the row grid line the item ends */
+    grid-row-end: 3;
+}
+
+#grid #card3 {
+    background-color: yellow !important;
+    /* indicate the column grid line the item starts */
+    grid-column-start: 2;
+    /* indicate the column grid line the item ends */
+    grid-column-end: 4;
+    /* indicate the row grid line the item starts */
+    grid-row-start: 3;
+    /* indicate the row grid line the item ends */
+    grid-row-end: 4;
+}
+
+#grid #card4 {
+    background-color: pink !important;
+    /* indicate the column grid line the item starts */
+    grid-column-start: 1;
+    /* indicate the column grid line the item ends */
+    grid-column-end: 2;
+    /* indicate the row grid line the item starts */
+    grid-row-start: 2;
+    /* indicate the row grid line the item ends */
+    grid-row-end: 4;
 }
